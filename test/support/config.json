@@ -1,0 +1,12 @@
+{
+	"common": "common_value",
+	"development": {
+		"key": "dev_value"
+	},
+	"qa": {
+		"key": "qa_value"
+	},
+	"production": {
+		"key": "dev_value"
+	}
+}
