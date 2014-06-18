@@ -2,7 +2,7 @@ var extend = require('extend');
 var log    = require('debug')('config');
 var path   = require('path');
 
-var configEnvironments = Array.isArray(process.env.CONFIG_ENVIRONMENTS)
+var configEnvironments = process.env.CONFIG_ENVIRONMENTS
 												 ? process.env.CONFIG_ENVIRONMENTS.split(',')
 												 : ['development', 'qa', 'production'];
 
