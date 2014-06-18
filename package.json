@@ -1,20 +1,34 @@
 {
-  "name": "cconfig",
-  "version": "0.0.0",
-  "description": "simple cascading config system",
-  "main": "index.js",
+  "name"        : "cconfig",
+  "version"     : "0.0.0",
+  "description" : "simple cascading config system",
+  "homepage"    : "http://github.com/mateodelnorte/cconfig",
+  "main"        : "index.js",
+  "author"      : "mattwalters5@gmail.com",
+  "license"     : "BSD-2-Clause",
+
   "scripts": {
     "test": "make test"
   },
-  "author": "mattwalters5@gmail.com",
-  "license": "BSD-2-Clause",
+
+  "contributors": [
+    { "name": "Narciso Guillen", "email": "guillen.narciso@gmail.com" }
+  ],
+
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/mateodelnorte/cconfig.git"
+  },
+
   "dependencies": {
     "extend": "~1.2.1",
     "debug": "~0.8.1"
   },
+
   "devDependencies": {
     "should": "~3.3.1",
     "sinon": "~1.9.1",
     "mocha": "~1.18.2"
   }
+
 }
