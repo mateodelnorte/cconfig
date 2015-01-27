@@ -17,5 +17,6 @@ module.exports = function (configPath) {
 		delete config[environment];
 	});
 	extend(config, tmp, process.env);
+	if (process.env.NODE_ENV === undefined) config.NODE_ENV = 'development';
 	return config;
-}
+};
