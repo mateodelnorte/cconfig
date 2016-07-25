@@ -5,8 +5,8 @@ var filterKeysWithDots = require('./lib/filterKeysWithDots');
 var setPathValue = require('./lib/setPathValue');
 
 var configEnvironments = process.env.CONFIG_ENVIRONMENTS
-													? process.env.CONFIG_ENVIRONMENTS.split(',')
-													: ['development', 'qa', 'production'];
+	? process.env.CONFIG_ENVIRONMENTS.split(',')
+	: ['development', 'qa', 'production'];
 
 log('initializing config with environments %j', configEnvironments);
 

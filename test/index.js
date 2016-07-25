@@ -13,8 +13,6 @@ describe('cconfig', function () {
 		config.should.have.property('DEBUG', process.env.DEBUG);
 	});
   it('should convert objects from environment variables with . format into object', function () {
-    // console.log('** config **', config);
-    // console.log('!! process.env !!', process.env);
     config.should.have.property('TEST');
     config.TEST.should.have.property('WITH');
     config.TEST.WITH.should.have.property('DOTS');
