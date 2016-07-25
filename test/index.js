@@ -16,5 +16,6 @@ describe('cconfig', function () {
     config.should.have.property('TEST');
     config.TEST.should.have.property('WITH');
     config.TEST.WITH.should.have.property('DOTS');
+    config.TEST.WITH.DOTS.should.equal('1.1.1.1');
   });
 });
