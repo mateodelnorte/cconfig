@@ -1,8 +1,8 @@
 DEBUG?=config
 
 test:
-	$(MAKE) DEBUG= test-debug
+	$(MAKE) DEBUG=  test-debug
 test-debug:
-	DEBUG=$(DEBUG) ./node_modules/.bin/mocha -R spec --recursive
+	env TEST.WITH.DOTS=1.1.1.1 DEBUG=$(DEBUG) ./node_modules/.bin/mocha -R spec --recursive
 
 .PHONY: test
