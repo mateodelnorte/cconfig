@@ -55,7 +55,11 @@ module.exports = function (configPath) {
 	});
 
 	// extend config with currentEnvConfig and process.env
-	extend(config, currentEnvConfig, process.env);
+	extend(config, currentEnvConfig, process.env, {
+		__clear: function () {
+			config = null;
+		}
+	});
 
 	// make objects out of keys that contain .
 	const keysWithDots = filterKeysWithDots(config);
