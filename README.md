@@ -25,7 +25,7 @@ or you may specify a config file location:
 alternatively, you may chose to provide an object as a base configuration
 
     var defaultConfig = { port: 1337 }
-    var config = require('cconfig)(defaultConfig)
+    var config = require('cconfig')(defaultConfig)
 
 The configuration provided through a file or object may include global values and values particular to any NODE_ENV environment name that may be specified. Global variables specified in config.json will override any process environment variable values, and environment-specific items in config.json will override default values defined there as well. 
 
