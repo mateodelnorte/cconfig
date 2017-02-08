@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mateodelnorte/cconfig.svg?branch=master)](https://travis-ci.org/mateodelnorte/cconfig)
+
 # cconfig
 
 `cconfig` is a simple cascading config system
