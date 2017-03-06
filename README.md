@@ -18,6 +18,8 @@ With `cconfig` you can define global and environment specific config values, and
 ```
 cconfig uses the NODE_ENV env var to provide environmenet-specific configuration settings. Available settings include process environment variables provided to the process, as well as global and environment-specific settings specified in a config.json file. 
 
+### config.js || config.json
+
 cconfig can be loaded to expect a `config.json` or `config.js` file in the process' base directory cwd: 
 ```
     var config = require('cconfig')(); 
@@ -33,6 +35,9 @@ alternatively, you may chose to provide an object as a base configuration
     var defaultConfig = { port: 1337 }
     var config = require('cconfig')(defaultConfig)
 ```
+
+### Cascading Overrides 
+
 The configuration provided through a file or object may include global values and values particular to any NODE_ENV environment name that may be specified. Global variables specified in config.json will override any process environment variable values, and environment-specific items in config.json will override default values defined there as well. 
 ```
     {
