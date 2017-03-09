@@ -77,7 +77,7 @@ assuming `NODE_ENV=staging node myApp.js`:
     console.log(config.OVERRIDEABLE_VAR"); // prints "this var will be used, unless overriden for another environment"
     console.log(config.ANOTHER_VAR"); // prints "mongodb://somevalue2:27017/somedb"
 ```
-individual values can be overriden by environment variables specified globally or inline as well. 
+Individual values can be overriden by environment variables specified globally or inline as well. 
 
 assuming: `OVERRIDEABLE_VAR="text straight from the command line" NODE_ENV=production node myApp.js`:
 ```
@@ -88,6 +88,17 @@ assuming: `OVERRIDEABLE_VAR="text straight from the command line" NODE_ENV=produ
     console.log(config.OVERRIDEABLE_VAR"); // text straight from the command line"
     console.log(config.ANOTHER_VAR"); // prints "mongodb://somevalue3:27017/somedb"
 ```
+
+It's possible to override nested properties from the command line as well. Assuming a `config.js` file similar to the following:
+```
+module.exports = {
+    BROKER: {
+        HOST: 'localhost'
+        PORT: 1243
+    }
+}
+```
+The `PORT` property can be overriden from the command line via: `"BROKER.PORT"=1235 node myApp.js`. If you're coding on Windows and want to be able to use similar behavior, see the very useful package [cross-env](https://www.npmjs.com/package/cross-env).
 
 # Run the tests
 ```
