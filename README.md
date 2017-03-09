@@ -24,7 +24,7 @@ cconfig can be loaded to expect a `config.json` or `config.js` file in the proce
 ```
     var config = require('cconfig')(); 
 ```
-or you may specify a config file location: 
+or you may specify a config file location (this is useful when your application is running in a different directory than where the config.js/config.json resides): 
 ```
     var config = require('cconfig')('./path/to/my/config.json'); 
     // ----- OR -----
