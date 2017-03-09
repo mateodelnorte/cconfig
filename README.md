@@ -48,16 +48,18 @@ The configuration provided through a file or object may include global values an
       },
       "staging": {
         "ANOTHER_VAR": "mongodb://somevalue2:27017/somedb,
-        "OVERRIDEABLE_VAR": "this var will be used, unless overriden for another environment",
+        "OVERRIDEABLE_VAR": "this var will be used for staging, unless overriden for another environment",
       },
       "production": {
         "ANOTHER_VAR": "mongodb://somevalue3:27017/somedb,
-        "OVERRIDEABLE_VAR": "this var will be used, unless overriden for another environment",
+        "OVERRIDEABLE_VAR": "this var will be used for production, unless overriden for another environment",
       }
     }
 ```    
 
-usage is simple, as all values are available as properties on the returned object:
+usage is simple:
+
+assuming `node myApp.js` or `NODE_ENV=development node myApp.js`:
 ```
     var config = require('cconfig')();
     
@@ -66,6 +68,27 @@ usage is simple, as all values are available as properties on the returned objec
     console.log(config.OVERRIDEABLE_VAR"); // prints "this var will be used, unless overriden for another environment"
     console.log(config.ANOTHER_VAR"); // prints "mongodb://somevalue:27017/somedb"
 ```
+assuming `NODE_ENV=staging node myApp.js`:
+```
+    var config = require('cconfig')();
+    
+    console.log(config.NODE_ENV); // prints "staging"
+    console.log(config.MULTI_ENV_VAR"); // prints "this var will be used in all environments"
+    console.log(config.OVERRIDEABLE_VAR"); // prints "this var will be used, unless overriden for another environment"
+    console.log(config.ANOTHER_VAR"); // prints "mongodb://somevalue2:27017/somedb"
+```
+individual values can be overriden by environment variables specified globally or inline as well. 
+
+assuming: `OVERRIDEABLE_VAR="text straight from the command line" NODE_ENV=production node myApp.js`:
+```
+    var config = require('cconfig')();
+    
+    console.log(config.NODE_ENV); // prints "production"
+    console.log(config.MULTI_ENV_VAR"); // prints "this var will be used in all environments"
+    console.log(config.OVERRIDEABLE_VAR"); // text straight from the command line"
+    console.log(config.ANOTHER_VAR"); // prints "mongodb://somevalue3:27017/somedb"
+```
+
 # Run the tests
 ```
     npm test
