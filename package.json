@@ -1,10 +1,12 @@
 {
   "name": "cconfig",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "simple cascading config system",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "build": "babel src -d dist",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,10 @@
     "debug": "~0.8.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "mocha": "~1.18.2",
     "should": "~3.3.1",
-    "sinon": "~1.9.1",
-    "mocha": "~1.18.2"
+    "sinon": "~1.9.1"
   }
 }

@@ -1,4 +1,4 @@
-var config = require('..')(__dirname + '/support/config.json');
+var config = require('../src')(__dirname + '/support/config.json');
 
 require('should');
 
@@ -29,7 +29,7 @@ describe('cconfig', function () {
 
   it('should accept an object as an already loaded config (for instance, from a webpack config)', function () {
 
-		var config = require('..')({
+		var config = require('../src')({
 			some: 'larger',
 			development: {
 				object: { obj: 'ect' }
