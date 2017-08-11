@@ -1,6 +1,6 @@
 {
   "name": "cconfig",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "simple cascading config system",
   "main": "dist/index.js",
   "files": [
