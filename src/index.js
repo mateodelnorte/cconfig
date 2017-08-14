@@ -22,7 +22,9 @@ module.exports = function (configPath) {
 
 		// First, get the configPath - this is either passed in when module is required
 		// set in an environment variable named CONFIG_PATH, or found in config.json
-		configPath = configPath || process.env.CONFIG_PATH ? path.resolve(process.env.CONFIG_PATH) : path.join(process.cwd(), 'config.json');
+		configPath = configPath !== undefined ? configPath : 
+			process.env.CONFIG_PATH ? path.resolve(process.env.CONFIG_PATH) : 
+			path.join(process.cwd(), 'config.json');
 
 		// Build the config from the configPath
 		
