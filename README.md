@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mateodelnorte/cconfig.svg?branch=master)](https://travis-ci.org/mateodelnorte/cconfig)
+[![Build Status](https://travis-ci.org/mateodelnorte/cconfig.svg?branch=master)](https://travis-ci.org/mateodelnorte/cconfig) [![Greenkeeper badge](https://badges.greenkeeper.io/mateodelnorte/cconfig.svg)](https://greenkeeper.io/)
 
 # cconfig
 
