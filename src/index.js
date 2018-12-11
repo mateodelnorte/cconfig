@@ -1,4 +1,3 @@
-const extend = require('extend');
 const log = require('debug')('cconfig');
 const path = require('path');
 const filterKeysWithDots = require('./lib/filterKeysWithDots');
@@ -56,8 +55,8 @@ module.exports = function (configPath) {
 		delete config[environment];
 	});
 
-	// extend config with currentEnvConfig and process.env
-	extend(config, currentEnvConfig, process.env, {
+	// Object.assign config with currentEnvConfig and process.env
+	Object.assign(config, currentEnvConfig, process.env, {
 		__clear: function () {
 			config = null;
 		}

@@ -1,31 +1,35 @@
 {
   "name": "cconfig",
-  "version": "1.2.4",
+  "version": "0.0.0-development",
   "description": "simple cascading config system",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
-    "test": "make test",
+    "test": "make test-debug",
     "build": "babel src -d dist",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mateodelnorte/cconfig.git"
+    "url": "https://github.com/mateodelnorte/cconfig.git"
   },
   "author": "mattwalters5@gmail.com",
+  "contributors": [
+    "hi@iammattwalters.com",
+    "pat@patscott.io"
+  ],
   "license": "BSD-2-Clause",
   "dependencies": {
-    "extend": "~1.2.1",
-    "debug": "~0.8.1"
+    "debug": "~4.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "mocha": "~1.18.2",
-    "should": "~3.3.1",
-    "sinon": "~1.9.1"
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "mocha": "~5.2.0",
+    "should": "~13.2.3",
+    "sinon": "~7.2.0"
   }
 }
