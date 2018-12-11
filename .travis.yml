@@ -1,0 +1,24 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - 8
+  - 10
+  - 11
+before_install:
+  - npm install -g greenkeeper-lockfile codecov semantic-release
+install:
+  - npm install
+before_script: greenkeeper-lockfile-update
+script:
+  - npm run test
+  - codecov
+after_script: greenkeeper-lockfile-upload
+after_success:
+  - semantic-release
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
