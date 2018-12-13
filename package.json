@@ -8,8 +8,6 @@
   ],
   "scripts": {
     "test": "make test-debug",
-    "build": "babel src -d dist",
-    "prepublishOnly": "npm run build",
     "commit": "git-cz"
   },
   "repository": {
