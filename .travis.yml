@@ -1,24 +1,25 @@
 language: node_js
-cache:
-  directories:
-    - ~/.npm
-notifications:
-  email: false
 node_js:
   - 8
   - 10
   - 11
-before_install:
-  - npm install -g greenkeeper-lockfile codecov semantic-release
-install:
-  - npm install
-before_script: greenkeeper-lockfile-update
-script:
-  - npm run test
-  - codecov
-after_script: greenkeeper-lockfile-upload
-after_success:
-  - semantic-release
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+
+notifications:
+  email: false
+
+jobs:
+  include:
+    - stage: test
+      before_install:
+        - npm install -g codecov greenkeeper-lockfile
+      before_script: greenkeeper-lockfile-update
+      script:
+        - npm run test
+        - codecov
+      after_script: greenkeeper-lockfile-upload
+    - stage: deploy
+      if: branch == master && !fork
+      node_js: node # pre-installed version
+      script:
+        - npm install -g semantic-release
+        - semantic-release
