@@ -21,7 +21,7 @@
   ],
   "license": "BSD-2-Clause",
   "dependencies": {
-    "debug": "~4.1.0"
+    "debug": "~4.3.0"
   },
   "devDependencies": {
     "commitizen": "3.1.2",
