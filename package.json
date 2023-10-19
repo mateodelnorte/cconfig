@@ -28,6 +28,6 @@
     "cz-conventional-changelog": "2.1.0",
     "mocha": "5.2.0",
     "should": "13.2.3",
-    "sinon": "7.5.0"
+    "sinon": "16.1.3"
   }
 }
